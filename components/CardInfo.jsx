@@ -1,6 +1,5 @@
-import React from 'react';
 import SectionCard from './SectionCard';
-import photo1 from '../assets/verLogo.png'
+import photo1 from '../verLogobg.png'
 
 // Replace the image links with your actual images.
 const CardInfo = () => {

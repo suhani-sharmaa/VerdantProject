@@ -1,7 +1,6 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import evbus from "../assets/evbus.jpg";
+import evbus from "../evbus.jpg";
 
 // Define the animation
 const slideInFromBottom = {

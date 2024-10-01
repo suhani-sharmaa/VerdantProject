@@ -1,6 +1,5 @@
-import React from 'react';
 
-const ExhibitionCard = ({ imgSrc, title, description, dates }) => {
+export default function ExhibitionCard({imgSrc,title,description,dates}) {
   return (
     <div className="max-w-xs bg-white shadow-md rounded-lg overflow-hidden m-4">
       <img src={imgSrc} alt={title} className="w-full h-48 object-cover" />
@@ -10,7 +9,6 @@ const ExhibitionCard = ({ imgSrc, title, description, dates }) => {
         <p className="mt-2 text-gray-500">{dates}</p>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ExhibitionCard;

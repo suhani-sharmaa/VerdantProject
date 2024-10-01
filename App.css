@@ -1,0 +1,28 @@
+.International{
+          background-image: url('./Images/AboutUsImages/Evbg2.webp');;
+}
+.EES{
+          background-image: url('./Images/AboutUsImages/Evbg3.webp');  
+}
+.AGRITECH{
+          background-image: url('./Images/AboutUsImages/Evbg4.webp');
+}
+.MSB{
+          background-image: url('./Images/AboutUsImages/Evbg5.webp');  
+}
+*{
+          scroll-behavior: smooth;
+}
+.Template-Project,.MSB,.AGRITECH,.EES,.International{
+          background-position: center;
+          background-attachment: fixed;
+          background-size: cover;
+          animation:scrl linear; 
+          animation-timeline: view();
+}
+@keyframes scrl {
+
+0% {background-position: top;}
+
+100% {background-position: bottom;}
+}

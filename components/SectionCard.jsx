@@ -1,6 +1,4 @@
-import React from 'react';
-
-const SectionCard = ({ number, title, description, imageSrc, reverse }) => {
+const SectionCard = (number, title, description, imageSrc, reverse) => {
   return (
     <div
       className={`grid grid-cols-1 md:grid-cols-2 gap-10 my-10 items-center ${

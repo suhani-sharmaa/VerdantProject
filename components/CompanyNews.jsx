@@ -1,7 +1,6 @@
-import React from 'react';
 
 // NewsCard Component to handle individual news items
-const NewsCard = ({ date, title, imageSrc }) => {
+const NewsCard = ({date, title, imageSrc}) => {
   return (
     <div className="bg-white rounded-lg shadow-lg overflow-hidden">
       <img
@@ -21,16 +20,19 @@ const NewsCard = ({ date, title, imageSrc }) => {
 const CompanyNews = () => {
   const newsItems = [
     {
+      key:1,
       date: 'September 18, 2024',
       title: 'ELIDZ / AIDC EASTERN CAPE / CCIG / SIGA PARTNERSHIP IN SOUTH AFRICA',
       imageSrc: '/path/to/image1.png', // Replace with the actual image path
     },
     {
+      key:2,
       date: 'September 11, 2024',
       title: 'The Minister of Transport of Sarawak State of Malaysia gave a thumbs up!',
       imageSrc: '/path/to/image2.png', // Replace with the actual image path
     },
     {
+      key:3,
       date: 'July 31, 2024',
       title: 'The Fenhu Starship Super Factory at the headquarters of CCIG was officially put into operation',
       imageSrc: '/path/to/image3.png', // Replace with the actual image path
@@ -44,9 +46,9 @@ const CompanyNews = () => {
           Company News
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {newsItems.map((newsItem, index) => (
+          {newsItems.map((newsItem) => (
             <NewsCard
-              key={index}
+              key={newsItem.key}
               date={newsItem.date}
               title={newsItem.title}
               imageSrc={newsItem.imageSrc}

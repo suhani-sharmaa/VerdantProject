@@ -1,4 +1,3 @@
-import React from 'react';
 import ExhibitionCard from './ExhibitionCard';
 
 const Exhibitions = () => {
@@ -35,11 +34,11 @@ const Exhibitions = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2  lg:grid-cols-4 gap-6">
         {exhibitions.map((exhibition, index) => (
           <ExhibitionCard
-            key={index}
-            imgSrc={exhibition.imgSrc}
-            title={exhibition.title}
-            description={exhibition.description}
-            dates={exhibition.dates}
+          key={index}
+          imgSrc = {exhibition.imgSrc}
+          title={exhibition.title}
+          description={exhibition.description}
+          dates={exhibition.dates}
           />
         ))}
       </div>

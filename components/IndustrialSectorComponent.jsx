@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { FaBusAlt, FaArrowCircleUp } from "react-icons/fa";
 import { GiThreeLeaves } from "react-icons/gi";
 import { SlEnergy } from "react-icons/sl";
@@ -37,7 +37,6 @@ const IndustrialSector = () => {
   }, [visibleSections]);
 
   const sectionDelay = (index) => `${0.4 * index}s`;
-
   return (
     <div className="bg-black text-white min-h-screen p-10">
       {/* Header section */}

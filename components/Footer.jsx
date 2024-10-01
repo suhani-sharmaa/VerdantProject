@@ -1,9 +1,7 @@
-import React from 'react';
-
-import verLogo from '../assets/verLogo.png';
-import linkedin from '../assets/linkedin.png';
-import instagram from '../assets/instagram.png';
-import youtube from '../assets/play.png';
+import verLogo from '../verLogo.png';
+import linkedin from '../linkedin.png';
+import instagram from '../instagram.png';
+import youtube from '../play.png';
 
 const Footer = () => {
   return (

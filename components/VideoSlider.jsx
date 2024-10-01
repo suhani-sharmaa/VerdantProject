@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { FaArrowRight } from "react-icons/fa";
-import video1 from "../assets/HOME - CCIG.mp4";
-import video2 from "../assets/video.mp4";
-import video3 from "../assets/tractors.mp4";
-import video4 from "../assets/video4.mp4"
+import video1 from "../HOME - CCIG.mp4";
+import video2 from "../video.mp4";
+import video3 from "../tractors.mp4";
+import video4 from "../video4.mp4"
 
 const videoSlides = [
   { src: video1, alt: 'Slide 1' },
