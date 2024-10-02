@@ -50,10 +50,10 @@ const Navbar = () => {
             <div className="ml-10 flex items-baseline space-x-4">
             <Link to='/' className="text-white hover:scale-110 transition-transform duration-300 hover:text-gray-300 px-3 py-2 text-sm font-medium">HOME</Link>
               <Link to='/products' className="text-white hover:scale-110 transition-transform duration-300 hover:text-gray-300 px-3 py-2 text-sm font-medium">PRODUCTS</Link>
-              <Link className="text-white hover:scale-110 transition-transform duration-300 hover:text-gray-300 px-3 py-2 text-sm font-medium">CUSTOMIZATION</Link>
-              <Link className="text-white hover:scale-110 transition-transform duration-300 hover:text-gray-300 px-3 py-2 text-sm font-medium">NEWS</Link>
+              <Link to='/customization' className="text-white hover:scale-110 transition-transform duration-300 hover:text-gray-300 px-3 py-2 text-sm font-medium">CUSTOMIZATION</Link>
+              <Link to='/news' className="text-white hover:scale-110 transition-transform duration-300 hover:text-gray-300 px-3 py-2 text-sm font-medium">NEWS</Link>
               <Link to='/Aboutus' className="text-white hover:scale-110 transition-transform duration-300 hover:text-gray-300 px-3 py-2 text-sm font-medium">ABOUT US</Link>
-              <Link className="text-white hover:scale-110 transition-transform duration-300 hover:text-gray-300 px-3 py-2 text-sm font-medium">CONTACT US</Link>
+              <Link to='/contactus' className="text-white hover:scale-110 transition-transform duration-300 hover:text-gray-300 px-3 py-2 text-sm font-medium">CONTACT US</Link>
             </div>
           </div>
 

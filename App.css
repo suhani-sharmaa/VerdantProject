@@ -1,7 +1,7 @@
 .International{
           background-image: url('./Images/AboutUsImages/Evbg2.webp');;
 }
-.EES{
+.EES ,.EMS{
           background-image: url('./Images/AboutUsImages/Evbg3.webp');  
 }
 .AGRITECH{
@@ -10,10 +10,16 @@
 .MSB{
           background-image: url('./Images/AboutUsImages/Evbg5.webp');  
 }
+.ILS{
+          background-image: url('./Images/Customization/img2.jpg');  
+}
+.ESS{
+          background-image: url('./Images/Customization/img3.jpg');  
+}
 *{
           scroll-behavior: smooth;
 }
-.Template-Project,.MSB,.AGRITECH,.EES,.International{
+.Template-Project,.MSB,.AGRITECH,.EES,.International ,.EMS,.ILS,.ESS{
           background-position: center;
           background-attachment: fixed;
           background-size: cover;

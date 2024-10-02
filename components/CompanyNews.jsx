@@ -1,3 +1,7 @@
+import Cnews1 from '../Images/News/Cnews1.jpg'
+import Cnews2 from '../Images/News/Cnews2.jpg'
+import Cnews3 from '../Images/News/Cnews3.jpg'
+
 
 // NewsCard Component to handle individual news items
 const NewsCard = ({date, title, imageSrc}) => {
@@ -23,19 +27,19 @@ const CompanyNews = () => {
       key:1,
       date: 'September 18, 2024',
       title: 'ELIDZ / AIDC EASTERN CAPE / CCIG / SIGA PARTNERSHIP IN SOUTH AFRICA',
-      imageSrc: '/path/to/image1.png', // Replace with the actual image path
+      imageSrc: `${Cnews1}`, // Replace with the actual image path
     },
     {
       key:2,
       date: 'September 11, 2024',
       title: 'The Minister of Transport of Sarawak State of Malaysia gave a thumbs up!',
-      imageSrc: '/path/to/image2.png', // Replace with the actual image path
+      imageSrc: `${Cnews2}`, // Replace with the actual image path
     },
     {
       key:3,
       date: 'July 31, 2024',
       title: 'The Fenhu Starship Super Factory at the headquarters of CCIG was officially put into operation',
-      imageSrc: '/path/to/image3.png', // Replace with the actual image path
+      imageSrc: `${Cnews3}`, // Replace with the actual image path
     },
   ];
 

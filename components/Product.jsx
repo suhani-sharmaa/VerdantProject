@@ -11,6 +11,7 @@ import { useEffect, useState } from 'react';
 export default function Product({initial = 0}) {
   const[count,setCount] = useState(initial);
   useEffect(()=>{
+    window.scrollTo(0, 0);
     document.title = 'Products-Verdant'
     if(count<=60) {
       setTimeout(() => {
@@ -45,11 +46,11 @@ export default function Product({initial = 0}) {
       </div>
 
       <div className="Product-Types flex flex-wrap justify-center">
-        <TemplateProduct bgImage={type1} Type={'Bikes'} link={'bikes'}/>
-        <TemplateProduct bgImage={type2} Type={'Scooters'} link={'scooters'}/>
-        <TemplateProduct bgImage={type3} Type={'Cars'} link={'cars'}/>
-        <TemplateProduct bgImage={type4} Type={'Buses'} link={'buses'}/>
-        <TemplateProduct bgImage={type5} Type={'Trucks'} link={'truckes'}/>
+        <TemplateProduct key={1} bgImage={type1} Type={'Bikes'} link='bikes'/>
+        <TemplateProduct key={2} bgImage={type2} Type={'Scooters'} link='scooters'/>
+        <TemplateProduct key={3} bgImage={type3} Type={'Cars'} link='cars'/>
+        <TemplateProduct key={4} bgImage={type4} Type={'Buses'} link='buses'/>
+        <TemplateProduct key={5} bgImage={type5} Type={'Trucks'} link='trucks'/>
       </div>
       <Footer />
     </>

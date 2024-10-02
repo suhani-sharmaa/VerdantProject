@@ -1,8 +1,8 @@
-export default function Contactus() {
+export default function Contactusform({Title , Position}) {
   return (
           <div className="bg-gray-100 min-h-screen flex items-center justify-center">
           <div className="w-full bg-white p-8">
-            <h2 className="text-4xl font-bold mb-6 text-start text-green-600">Contact Us</h2>
+            <h2 className={`text-5xl font-bold mb-6 text-${Position} text-green-600`}>{Title}</h2>
             <form>
               {/* Title */}
               <div className="mb-4">

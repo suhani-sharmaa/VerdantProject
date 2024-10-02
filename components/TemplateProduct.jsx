@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export default function TemplateProduct({ bgImage, Type }) {
+export default function TemplateProduct({ bgImage, Type , link}) {
   // Set the background image style
   return (
     <>
@@ -18,7 +18,7 @@ export default function TemplateProduct({ bgImage, Type }) {
           <hr className="w-1/12 my-7 bg-green-600 h-1 border-none" />
         </div>
         <Link
-          to={`/products/${Type}`}
+          to={`/products/${link}`}
           className="bg-green-600 w-fit h-12 rounded-full flex items-center text-white 
           px-10 py-6 hover:bg-transparent hover:text-green-600 hover:border-green-600   duration-500 border-2 border-transparent"
         >

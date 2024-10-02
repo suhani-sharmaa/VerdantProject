@@ -12,7 +12,7 @@ import color2 from '../Images/ProductsImages/color2.jpg'
 import color3 from '../Images/ProductsImages/color3.jpg'
 import color4 from '../Images/ProductsImages/color4.jpg'
 import Footer from './Footer'
-import Contactus from './Contactus'
+import Contactusform from './Contactusform'
 export default function ProductTemplate() {
   return (
           <>
@@ -98,7 +98,7 @@ export default function ProductTemplate() {
               <p className='text-center m-2'>Midnight blue</p>
             </div>
           </section>
-          <Contactus/>
+          <Contactusform Title = {'Contact Us'}/>
           <Footer/>
           </>
   )

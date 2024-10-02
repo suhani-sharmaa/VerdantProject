@@ -1,27 +1,30 @@
 import ExhibitionCard from './ExhibitionCard';
-
+import News1 from '../Images/News/News1.jpg'
+import News2 from '../Images/News/News2.jpg'
+import News3 from '../Images/News/News3.jpg'
+import News4 from '../Images/News/News4.jpg'
 const Exhibitions = () => {
   const exhibitions = [
     {
-      imgSrc: 'link_to_crrc_image',
+      imgSrc: `${News1}`,
       title: 'INNOTRANS 2024',
       description: 'CCIG will have ART produced by CRRC',
       dates: '24-27 September 2024, Berlin',
     },
     {
-      imgSrc: 'link_to_cantonfair_image',
+      imgSrc: `${News2}`,
       title: 'CANTONFAIR',
       description: '10.15-10.19 New Energy and Smart Mobility',
       dates: '10.15-10.19',
     },
     {
-      imgSrc: 'link_to_iaa_image',
+      imgSrc: `${News3}`,
       title: 'IAA TRANSPORTATION',
       description: 'Transportation fair',
       dates: '9.17-9.23',
     },
     {
-      imgSrc: 'link_to_elevator_image',
+      imgSrc: `${News4}`,
       title: 'THE ELEVATOR SHOW DUBAI',
       description: 'Partnership with CNIM',
       dates: '9.16-9.18',
