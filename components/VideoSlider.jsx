@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { FaArrowRight } from "react-icons/fa";
-import video1 from "../HOME - CCIG.mp4";
-import video2 from "../video.mp4";
-import video3 from "../tractors.mp4";
-import video4 from "../video4.mp4"
+import video1 from "../Videos/HOME - CCIG.mp4";
+import video2 from "../Videos/video.mp4";
+import video3 from "../Videos/tractors.mp4";
+import video4 from "../Videos/video4.mp4"
+import { Link } from 'react-router-dom';
 
 const videoSlides = [
   { src: video1, alt: 'Slide 1' },
@@ -37,15 +38,15 @@ const VideoSlider = () => {
 
       {/* Slide Content */}
       <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4 z-10">
-        <h1 className="text-white text-4xl md:text-6xl font-bold leading-tight">
+        <h1 className="text-white text-4xl md:text-6xl leading-tight">
           Green Technology
         </h1>
         <h2 className="text-white text-2xl md:text-4xl mt-4">
           Sustainable Future
         </h2>
-        <button className="mt-3 px-7 flex items-center py-3 bg-red-600 text-white rounded-3xl hover:bg-red-700 transition-transform duration-300">
+        <Link className="mt-3 px-7 flex items-center py-3 bg-gradient-to-br from-green-600 via-emerald-500 to-green-900 text-white rounded-3xl hover:from-green-400 duration-200">
           Our Portfolio <FaArrowRight className="ml-1"/>
-        </button>
+        </Link>
       </div>
 
       {/* Previous Slide Arrow */}

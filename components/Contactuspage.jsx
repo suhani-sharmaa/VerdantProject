@@ -1,10 +1,14 @@
+import { useEffect } from "react";
 import Contactusform from "./Contactusform";
-import Footer from "./Footer";
 
 export default function Contactuspage() {
+  useEffect(()=>{
+    window.scrollTo(0,0);
+    document.title = "Contact-Us"
+})
   return (
     <>
-<section className="contact-header">
+<section className="contact-header font-Ankori">
 <div className="hello">
     <div className="subhello">
         <h2>Contact Us</h2>
@@ -21,7 +25,6 @@ Position={'center'}/>
 <div>
 
 </div>
-<Footer/>
     </>
   )
 }

@@ -9,15 +9,12 @@ import { BrowserRouter as
   Route } from 'react-router-dom';
 import Home from './components/Home';
 import Product from './components/Product';
-import Bikes from './components/Products/Bikes';
-import Scooter from './components/Products/Scooter';
-import Cars from './components/Products/Cars';
-import Buses from './components/Products/Buses';
-import Truck from './components/Products/Truck';
 import News from './components/News';
+import ProductType from './components/ProductType'
 import Contactuspage from './components/Contactuspage';
-import ProductTemplate from './components/ProductTemplate';
 import Customization from './components/Customization';
+import ProductDetails from './components/ProductDetails';
+import Footer from './components/Footer';
 const App = () => {
   return (
     <>
@@ -30,13 +27,10 @@ const App = () => {
         <Route path="/news" Component={News}/>
         <Route path="/contactus" Component={Contactuspage}/>
         <Route path="/customization" Component={Customization}/>
-        <Route path="/products/bikes" Component={Bikes}/>
-        <Route path="/products/scooters" Component={Scooter}/>
-        <Route path="/products/cars" Component={Cars}/>
-        <Route path="/products/buses" Component={Buses}/>
-        <Route path="/products/trucks" Component={Truck}/>
-        <Route path="/products/details" Component={ProductTemplate}/>
+        <Route path="/products/:type" Component={ProductType}/>
+        <Route path="/products/:type/:model" Component={ProductDetails}/>
       </Routes>
+      <Footer/>
     </Router>
     </>
   );

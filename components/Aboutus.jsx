@@ -33,7 +33,7 @@ export default function Aboutus() {
             <div className="px-4 md:px-8 my-4 text-white font-sans">
               <p>The company carries the mission of the pilot field of state enterprises mixed reform and the pathfinder of state-owned capital innovation, and is committed to the investment in intelligent manufacturing industry and the transformation and upgrading service of regional traditional industries; it has important manufacturing and service bases in Yangtze River Delta, Pearl River Delta, Bohai Rim, Central China and Hungary, Malaysia and Singapore, with electromechanical and electrical research and development institutes in Germany and Japan.</p>
             </div>
-            <Link className="text-white w-fit rounded-full hover:bg-white hover:text-black border-2 p-3 md:p-4 mx-4 md:mx-10 my-5">
+            <Link className="text-white w-fit rounded-full hover:bg-white hover:text-black border-2 p-3 md:p-4 mx-4 md:mx-10 my-5 duration-300">
               OUR DEVELOPMENT HISTORY &rarr;
             </Link>
           </div>

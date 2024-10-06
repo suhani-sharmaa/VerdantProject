@@ -4,20 +4,19 @@ import CompanyNews from "./CompanyNews";
 import Exhibitions from "./Exhibitions";
 import IndustrialSector from "./IndustrialSectorComponent";
 import VideoSlider from "./VideoSlider";
-import Footer from "./Footer";
 
 export default function Home() {
   useEffect(()=>{
+    window.scrollTo(0,0);
     document.title = "Home-Verdant"
   })
   return (
-          <div className="App">
+          <div className="App font-Ankori">
           <VideoSlider/>
           <Exhibitions/>
           <IndustrialSector/>
           <AutomotiveSection/>
           <CompanyNews/>
-          <Footer/> 
         </div>
   )
 }

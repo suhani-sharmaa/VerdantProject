@@ -8,9 +8,12 @@ export default {
     extend: {
       height:{
         '104':'30rem'
-      }
+      },
+      fontFamily: {
+        Aquire: ['Aquire'],
+        Ankori: ['Ankori'],
+      },
     },
   },
   plugins: [],
 }
-

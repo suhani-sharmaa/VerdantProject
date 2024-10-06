@@ -22,9 +22,11 @@ export default function News() {
   }
   useEffect(()=>{
     updateThought();
+      window.scrollTo(0,0);
+      document.title = "News-Verdant"
   })
   return (
-    <div>
+    <div className='font-Ankori'>
     {/* Contact Us Section */}
     <section className="contact-header">
       <div className="hello">

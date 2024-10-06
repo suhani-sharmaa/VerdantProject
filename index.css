@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+          font-family: 'Aquire';
+          src: url('./Fonts/Aquire-BW0ox.otf') format('otf');
+          font-weight: normal;
+          font-style: normal;
+      }
+@font-face {
+          font-family: 'Ankori';
+          src: url('./Fonts/AnkoriRegular-q2ZXl.otf') format('otf');
+          font-weight: normal;
+          font-style: normal;
+      }

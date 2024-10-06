@@ -1,11 +1,12 @@
-import verLogo from '../verLogo.png';
-import linkedin from '../linkedin.png';
-import instagram from '../instagram.png';
-import youtube from '../play.png';
+import verLogo from '../Images/Logo/verLogo.png';
+import linkedin from '../Images/Social/linkedin.png';
+import instagram from '../Images/Social/instagram.png';
+import youtube from '../Images/Social/play.png';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-gray-900 text-white font-Ankori">
       <div className="container mx-auto py-6 px-5 flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
         {/* Logo and Company Info */}
         <div className="flex flex-col items-center md:flex-row md:space-x-4">
@@ -44,12 +45,12 @@ const Footer = () => {
             China City Industrial Group (CCIG) CO., LTD. 沪ICP备2023035620号-1
           </p>
           <ul className="flex flex-col md:flex-row md:space-x-4 text-gray-400 space-y-2 md:space-y-0">
-            <li><a href="#" className="hover:text-white">ABOUT US</a></li>
-            <li><a href="#" className="hover:text-white">PRODUCTS</a></li>
-            <li><a href="#" className="hover:text-white">CUSTOMIZATION</a></li>
-            <li><a href="#" className="hover:text-white">NEWS</a></li>
-            <li><a href="#" className="hover:text-white">CONTACT US</a></li>
-            <li><a href="#" className="hover:text-white">English</a></li>
+            <li><Link to='/aboutus' className="hover:text-white">ABOUT US</Link></li>
+            <li><Link to='/products' className="hover:text-white">PRODUCTS</Link></li>
+            <li><Link to='/customization' className="hover:text-white">CUSTOMIZATION</Link></li>
+            <li><Link to='/news' className="hover:text-white">NEWS</Link></li>
+            <li><Link to='/contactus' className="hover:text-white">CONTACT US</Link></li>
+            <li><Link to='/' className="hover:text-white">English</Link></li>
           </ul>
         </div>
       </div>
@@ -59,7 +60,7 @@ const Footer = () => {
 
       {/* Back to Top Button */}
       <div className="fixed bottom-4 right-4">
-        <a href="#" className="block bg-[#057E47] p-3 rounded-full text-white hover:bg-red-600">
+        <a href="#" className="block bg-[#057E47] p-3 rounded-full text-white hover:bg-emerald-600 duration-200">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

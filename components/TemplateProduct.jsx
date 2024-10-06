@@ -1,21 +1,25 @@
 import { Link } from "react-router-dom";
 
-export default function TemplateProduct({ bgImage, Type , link}) {
+export default function TemplateProduct({ bgImage, Type ,discription, link}) {
   // Set the background image style
   return (
     <>
       <div
-        className="md:h-104 h-96 md:m-10 m-4 p-6 bg-black rounded-3xl flex flex-wrap items-start Template-Project
-          w-full md:w-4/5 hover:shadow--3 shadow-lg"  // Responsive width and margin adjustments for small screens
+        className="md:h-104 h-96 md:m-10 m-4 bg-black rounded-3xl Template-Project
+          w-full md:w-4/5 hover:shadow--3 shadow-lg font-Ankori"  // Responsive width and margin adjustments for small screens
         style={{ backgroundImage: `url(${bgImage})` }} // Apply the background style here
       >
-        <div className="w-full mt-28 sm:mt-16">
+        <div className="w-full h-full flex flex-wrap items-center p-6 backdrop-brightness-50 rounded-3xl">
+        <div className="w-full">
           <h1 className="font-semibold tracking-wide text-white 
             text-4xl md:text-6xl md:mt-14" // Responsive text sizes
           >
             {Type}
           </h1>
           <hr className="w-1/12 my-7 bg-green-600 h-1 border-none" />
+        </div>
+        <div className="text-white text-xl font-bold">
+          <p>{discription}</p>
         </div>
         <Link
           to={`/products/${link}`}
@@ -24,6 +28,7 @@ export default function TemplateProduct({ bgImage, Type , link}) {
         >
           More &gt;
         </Link>
+        </div>
       </div>
     </>
   );
