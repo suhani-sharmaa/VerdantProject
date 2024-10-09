@@ -25,13 +25,13 @@ export default function Aboutus() {
           </div>
           <div className='flex flex-wrap'>
             <div className="px-4 md:px-8 my-4 text-white font-sans">
-              <p>Founded in March 2016, CCIG (formerly known as “CRRC Urban Transportation Co., Ltd”) is a mixed ownership, state-owned capital holding enterprise established as a joint venture between CRRC and local state-owned capital and strategic investors in the Yangtze River Delta region.</p>
+              <p>we are pioneers in the electric vehicle (EV) industry, dedicated to revolutionizing the way the world views sustainable transportation. Founded by a team of passionate engineers and environmental enthusiasts, we believe that innovation and sustainability can go hand in hand. Our mission is to create cutting-edge electric vehicles that not only meet the needs of today’s drivers but also contribute to a cleaner, greener planet for future generations.</p>
             </div>
             <div className="px-4 md:px-8 my-4 text-white font-sans">
-              <p>The company is headquartered in Fenhu, Wujiang, Suzhou, a demonstration zone of Yangtze River Delta integration, with total assets of nearly 50 billion yuan, net assets of more than 28 billion yuan, and nearly 10,000 employees. The group has five major sectors: Greenway Heavy Industries, GS Mechatronics, Greenway Electric, CRRC MRT and Galactic Development, and two A-share main board listed companies: Thinker Agricultural Machinery and Heshun Electric (Harmonic Electric).</p>
+              <p>Our commitment to sustainability goes beyond just building electric vehicles; it encompasses our entire production process. We employ eco-friendly materials, energy-efficient manufacturing techniques, and rigorous testing protocols to ensure that every vehicle we produce has minimal environmental impact. By integrating advanced technology and sustainable practices, we aim to set a new standard in the automotive industry and inspire others to follow suit.</p>
             </div>
             <div className="px-4 md:px-8 my-4 text-white font-sans">
-              <p>The company carries the mission of the pilot field of state enterprises mixed reform and the pathfinder of state-owned capital innovation, and is committed to the investment in intelligent manufacturing industry and the transformation and upgrading service of regional traditional industries; it has important manufacturing and service bases in Yangtze River Delta, Pearl River Delta, Bohai Rim, Central China and Hungary, Malaysia and Singapore, with electromechanical and electrical research and development institutes in Germany and Japan.</p>
+              <p>At Verdant Ltd, we envision a future where electric vehicles are the norm, not the exception. Our diverse lineup of EVs caters to various lifestyles, from compact urban cars to spacious family SUVs. We are committed to enhancing the driving experience with innovative features, unparalleled performance, and exceptional safety standards. Join us on this journey toward a sustainable future, and let’s drive change together!</p>
             </div>
             <Link className="text-white w-fit rounded-full hover:bg-white hover:text-black border-2 p-3 md:p-4 mx-4 md:mx-10 my-5 duration-300">
               OUR DEVELOPMENT HISTORY &rarr;

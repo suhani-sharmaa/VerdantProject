@@ -1,8 +1,11 @@
 .International{
           background-image: url('./Images/AboutUsImages/Evbg2.webp');;
 }
-.EES ,.EMS{
+.EES{
           background-image: url('./Images/AboutUsImages/Evbg3.webp');  
+}
+.BRP{
+          background-image: url('./Images/Customization/BRP.jpg');
 }
 .AGRITECH{
           background-image: url('./Images/AboutUsImages/Evbg4.webp');
@@ -10,16 +13,16 @@
 .MSB{
           background-image: url('./Images/AboutUsImages/Evbg5.webp');  
 }
-.ILS{
-          background-image: url('./Images/Customization/img2.jpg');  
+.ICF{
+          background-image: url('./Images/Customization/ICF.jpg');  
 }
-.ESS{
-          background-image: url('./Images/Customization/img3.jpg');  
+.EDA{
+          background-image: url('./Images/Customization/EDA.jpg');  
 }
 *{
           scroll-behavior: smooth;
 }
-.Template-Project,.MSB,.AGRITECH,.EES,.International ,.EMS,.ILS,.ESS{
+.Template-Project,.MSB,.AGRITECH,.EES,.International ,.BRP,.ICF,.EDA{
           background-position: center;
           background-attachment: fixed;
           background-size: cover;
