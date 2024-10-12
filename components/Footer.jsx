@@ -1,4 +1,4 @@
-import verLogo from '../Images/Logo/verLogo.png';
+import verLogo from '../Images/Logo/verLogo.jpeg';
 import linkedin from '../Images/Social/linkedin.png';
 import instagram from '../Images/Social/instagram.png';
 import youtube from '../Images/Social/play.png';
@@ -13,11 +13,11 @@ const Footer = () => {
           <img
             src={verLogo} // Replace with the actual logo image
             alt="Company Logo"
-            className="h-14"
+            className="h-14 rounded-md"
           />
           <div>
-            <p className="text-lg font-bold">CHINA CITY INDUSTRIAL GROUP CO., LTD</p>
-            <p className="mt-1 text-gray-400">info@crrcsh.cc</p>
+            <p className="text-lg font-bold">VERDANT AUTOBOTS</p>
+            <p className="mt-1 text-gray-400">verdant@info.com</p>
           </div>
         </div>
 
@@ -42,7 +42,7 @@ const Footer = () => {
       <div className="bg-gray-800 py-4">
         <div className="container mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left space-y-4 md:space-y-0">
           <p className="text-gray-500">
-            China City Industrial Group (CCIG) CO., LTD. 沪ICP备2023035620号-1
+            Verdant Autobots Pvt. Ltd.
           </p>
           <ul className="flex flex-col md:flex-row md:space-x-4 text-gray-400 space-y-2 md:space-y-0">
             <li><Link to='/aboutus' className="hover:text-white">ABOUT US</Link></li>

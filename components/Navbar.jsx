@@ -37,10 +37,10 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           {/* Logo with white box */}
-          <div className="flex-shrink-0 cursor-pointer bg-white  p-0.3 rounded-2xl shadow-lg">
+          <div className="flex-shrink-0 cursor-pointer">
             <img
-              className="h-12 logo"
-              src={verLogo} // Placeholder for your logo
+              className="h-12"
+              src={verLogo}
               alt="Logo"
             />
           </div>
