@@ -12,13 +12,13 @@ export default function TemplateProduct({ bgImage, Type ,discription, link}) {
         <div className="w-full h-full flex flex-wrap items-center p-6 backdrop-brightness-50 rounded-3xl">
         <div className="w-full">
           <h1 className="font-semibold tracking-wide text-white 
-            text-4xl md:text-6xl md:mt-14" // Responsive text sizes
+            text-5xl md:text-6xl md:mt-14" // Responsive text sizes
           >
             {Type}
           </h1>
-          <hr className="w-1/12 my-7 bg-green-600 h-1 border-none" />
+          <hr className="md:w-1/12 w-1/5 my-7 bg-green-600 h-1 border-none" />
         </div>
-        <div className="text-white text-xl font-bold">
+        <div className="text-white md:text-xl text-sm font-bold">
           <p>{discription}</p>
         </div>
         <Link

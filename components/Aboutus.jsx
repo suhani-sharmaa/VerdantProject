@@ -7,7 +7,6 @@ import Product3 from '../Images/AboutUsImages/Product3.jpg'
 import Product4 from '../Images/AboutUsImages/Product4.jpg'
 import Product5 from '../Images/AboutUsImages/Product5.jpg'
 import { useEffect } from 'react'
-import Footer from './Footer'
 import { Link } from 'react-router-dom'
 export default function Aboutus() {
   useEffect(() => {
@@ -212,8 +211,6 @@ export default function Aboutus() {
           </div>
         </div>
       </div>
-
-      <Footer />
     </>
   )
 }

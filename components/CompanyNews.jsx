@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Cnews1 from '../Images/News/Cnews1.jpg'
 import Cnews2 from '../Images/News/Cnews2.jpg'
 import Cnews3 from '../Images/News/Cnews3.jpg'
@@ -60,9 +61,9 @@ const CompanyNews = () => {
           ))}
         </div>
         <div className="flex justify-center mt-8">
-          <button className="px-6 py-3 bg-[#057E47] text-white font-semibold hover:scale-110 duration-300 rounded-full ">
+          <Link to={'/news'} className="px-6 py-3 bg-[#057E47] text-white font-semibold hover:scale-110 duration-300 rounded-full ">
             MORE &gt;
-          </button>
+          </Link>
         </div>
       </div>
       {/* Padding at the bottom to prevent content overlap */}

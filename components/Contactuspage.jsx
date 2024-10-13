@@ -9,11 +9,9 @@ export default function Contactuspage() {
   return (
     <>
 <section className="contact-header font-Ankori">
-<div className="hello">
-    <div className="subhello">
-        <h2>Contact Us</h2>
-    </div>
-</div>
+<div className="h-80 bg-gray-900 w-full flex justify-center items-center bg-gray-900">
+          <h1 className='md:text-6xl text-5xl font-Ankori font-bold text-white w-fit'>Contact-Us</h1>
+        </div>
 </section>
 <Contactusform Title = {'Business Inquiry'}
 Position={'center'}/>

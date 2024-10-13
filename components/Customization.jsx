@@ -9,9 +9,9 @@ export default function Customization() {
   })
   return (
     <>
-           <div className='h-lvh flex flex-wrap items-center bg-cover' style={{ backgroundImage: `url(${img1})` }}>
-        <span className='w-full font-Ankori drop-shadow-md shadow-black'>
-        <h1 className="tracking-widest text-white text-4xl md:text-7xl m-10 mb-0 w-fit drop-shadow-lg">
+           <div className='h-lvh flex flex-wrap items-end bg-cover' style={{ backgroundImage: `url(${img1})` }}>
+        <span className='w-full font-Ankori'>
+        <h1 className="tracking-widest text-white text-4xl md:text-7xl m-10 mb-0 w-fit">
   CUSTOMIZATION
 </h1>
           <hr className="w-1/12 mb-14 mx-10 mt-10 bg-green-700 h-1.5 border-none" />

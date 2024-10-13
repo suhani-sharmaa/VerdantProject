@@ -57,7 +57,7 @@ const IndustrialSector = () => {
           className={`flex flex-col items-center p-4 transition-opacity duration-1000 ease-in-out ${
             visibleSections.includes(0) ? 'opacity-100' : 'opacity-0'
           }`}
-          style={{ transitionDelay: visibleSections.includes(0) ? sectionDelay(1) : '0s' }}
+          style={{ transitionDelay: visibleSections.includes(0) ? sectionDelay(0.5) : '0s' }}
         >
           <div className="text-6xl text-[#057E47] mb-4 hover:text-white duration-500"><FaBusAlt /></div>
           <h3 className="text-xl font-semibold">Automotive</h3>
@@ -72,7 +72,7 @@ const IndustrialSector = () => {
           className={`flex flex-col items-center p-4 transition-opacity duration-1000 ease-in-out ${
             visibleSections.includes(1) ? 'opacity-100' : 'opacity-0'
           }`}
-          style={{ transitionDelay: visibleSections.includes(1) ? sectionDelay(2) : '0s' }}
+          style={{ transitionDelay: visibleSections.includes(1) ? sectionDelay(1) : '0s' }}
         >
           <div className="text-6xl text-[#057E47] mb-4 hover:text-white duration-500"><FaArrowCircleUp /></div>
           <h3 className="text-xl font-semibold">Intelligent Lifting System</h3>
@@ -87,7 +87,7 @@ const IndustrialSector = () => {
           className={`flex flex-col items-center p-4 transition-opacity duration-1000 ease-in-out ${
             visibleSections.includes(2) ? 'opacity-100' : 'opacity-0'
           }`}
-          style={{ transitionDelay: visibleSections.includes(2) ? sectionDelay(3) : '0s' }}
+          style={{ transitionDelay: visibleSections.includes(2) ? sectionDelay(1.5) : '0s' }}
         >
           <div className="text-6xl text-[#057E47] mb-4 hover:text-white duration-500"><GiThreeLeaves /></div>
           <h3 className="text-xl font-semibold">Agricultural Machines</h3>
@@ -105,7 +105,7 @@ const IndustrialSector = () => {
           className={`flex flex-col items-center p-4 transition-opacity duration-1000 ease-in-out ${
             visibleSections.includes(3) ? 'opacity-100' : 'opacity-0'
           }`}
-          style={{ transitionDelay: visibleSections.includes(3) ? sectionDelay(4) : '0s' }}
+          style={{ transitionDelay: visibleSections.includes(3) ? sectionDelay(2) : '0s' }}
         >
           <div className="text-6xl text-[#057E47] mb-4 hover:text-white duration-500"><SlEnergy /></div>
           <h3 className="text-xl font-semibold">Energy Storage System</h3>
@@ -120,7 +120,7 @@ const IndustrialSector = () => {
           className={`flex flex-col items-center p-4 transition-opacity duration-1000 ease-in-out ${
             visibleSections.includes(4) ? 'opacity-100' : 'opacity-0'
           }`}
-          style={{ transitionDelay: visibleSections.includes(4) ? sectionDelay(5) : '0s' }}
+          style={{ transitionDelay: visibleSections.includes(4) ? sectionDelay(2.5) : '0s' }}
         >
           <div className="text-6xl text-[#057E47] mb-4 hover:text-white duration-500"><MdDirectionsRailway /></div>
           <h3 className="text-xl font-semibold">Autonomous Rail Rapid Transit</h3>
@@ -135,7 +135,7 @@ const IndustrialSector = () => {
           className={`flex flex-col items-center p-4 transition-opacity duration-1000 ease-in-out ${
             visibleSections.includes(5) ? 'opacity-100' : 'opacity-0'
           }`}
-          style={{ transitionDelay: visibleSections.includes(5) ? sectionDelay(6) : '0s' }}
+          style={{ transitionDelay: visibleSections.includes(5) ? sectionDelay(3) : '0s' }}
         >
           <div className="text-6xl text-[#057E47] mb-4 hover:text-white duration-500"><PiNotepad /></div>
           <h3 className="text-xl font-semibold">Customization</h3>

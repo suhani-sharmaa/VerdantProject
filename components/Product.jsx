@@ -26,7 +26,7 @@ export default function Product({initial = 0}) {
     if(count<=60) {
       setTimeout(() => {
         setCount(count + 1);
-      }, 15);  
+      }, 10);  
     }
   },[count])
   return (
@@ -55,12 +55,12 @@ export default function Product({initial = 0}) {
         </div>
       </div>
 
-      <div className="Product-Types flex flex-wrap justify-center">
-        <TemplateProduct key={3} bgImage={type3} Type={'Cars'} link='cars' discription={discriptionData[0].evCars}/>
-        <TemplateProduct key={2} bgImage={type2} Type={'Ambulance'} link='ambulances' discription={discriptionData[4].evAmbulance}/>
-        <TemplateProduct key={1} bgImage={type1} Type={'Tractor'} link='tractors' discription={discriptionData[1].evTractors}/>
-        <TemplateProduct key={4} bgImage={type4} Type={'Buses'} link='buses' discription={discriptionData[2].evBuses}/>
+      <div className="Product-Types h-fit flex flex-wrap justify-center">
         <TemplateProduct key={5} bgImage={type5} Type={'Trucks'} link='trucks' discription={discriptionData[3].evTrucks}/>
+        <TemplateProduct key={1} bgImage={type1} Type={'Tractor'} link='tractors' discription={discriptionData[1].evTractors}/>
+        <TemplateProduct key={2} bgImage={type2} Type={'Ambulance'} link='ambulances' discription={discriptionData[4].evAmbulance}/>
+        <TemplateProduct key={4} bgImage={type4} Type={'Buses'} link='buses' discription={discriptionData[2].evBuses}/>
+        <TemplateProduct key={3} bgImage={type3} Type={'Cars'} link='cars' discription={discriptionData[0].evCars}/>
       </div>
     </>
   );

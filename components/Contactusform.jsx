@@ -71,7 +71,7 @@ export default function Contactusform({Title , Position}) {
               <div className="w-full flex justify-center">
                 <button
                   type="submit"
-                  className="w-1/6 bg-green-600 text-white font-bold py-2 px-4 rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
+                  className="md:w-1/6 w-1/2 bg-green-600 text-white font-bold py-2 px-4 rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
                 >
                   Send
                 </button>

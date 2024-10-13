@@ -1,38 +1,46 @@
-import verLogo from '../Images/Logo/verLogo.jpeg';
+import verLogo from '../Images/Logo/verLogo.png';
 import linkedin from '../Images/Social/linkedin.png';
 import instagram from '../Images/Social/instagram.png';
 import youtube from '../Images/Social/play.png';
+import facebook from '../Images/Social/facebook.png';
+import twitter from '../Images/Social/twitter.png';
 import { Link } from 'react-router-dom';
+import { FaArrowUp } from 'react-icons/fa';
 
 const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white font-Ankori">
       <div className="container mx-auto py-6 px-5 flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
         {/* Logo and Company Info */}
-        <div className="flex flex-col items-center md:flex-row md:space-x-4">
+        <div className="flex flex-col items-center md:flex-row md:space-x-4 w-full md:m-0 my-5">
           <img
             src={verLogo} // Replace with the actual logo image
             alt="Company Logo"
-            className="h-14 rounded-md"
+            className="md:h-14 h-15 rounded-md"
           />
-          <div>
+          <div className='w-full py-4'>
             <p className="text-lg font-bold">VERDANT AUTOBOTS</p>
             <p className="mt-1 text-gray-400">verdant@info.com</p>
           </div>
         </div>
 
         {/* Social Media Links */}
-        <div className="flex flex-col items-center">
-          <p className="text-lg font-bold text-[#057E47] mb-3">Follow us</p>
+        <div className="flex flex-col items-center md:w-1/5 w-full">
           <div className="flex space-x-3">
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-              <img src={linkedin} className="h-6" />
+              <img src={linkedin} className="h-8 hover:scale-110 duration-100" />
             </a>
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-              <img src={instagram} className="h-6" />
+              <img src={instagram} className="h-8 hover:scale-110 duration-100" />
             </a>
             <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
-              <img src={youtube} className="h-6" />
+              <img src={youtube} className="h-8 hover:scale-110 duration-100" />
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+              <img src={facebook} className="h-8 hover:scale-110 duration-100" />
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+              <img src={twitter} className="h-8 hover:scale-110 duration-100" />
             </a>
           </div>
         </div>
@@ -60,18 +68,9 @@ const Footer = () => {
 
       {/* Back to Top Button */}
       <div className="fixed bottom-4 right-4">
-        <a href="#" className="block bg-[#057E47] p-3 rounded-full text-white hover:bg-emerald-600 duration-200">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={2}
-            stroke="currentColor"
-            className="h-6 w-6"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
-          </svg>
-        </a>
+        <button onClick={()=>{window.scrollTo(0,0)}} className="block bg-[#057E47] p-3 rounded-full text-white hover:bg-emerald-600 duration-200">
+          <FaArrowUp className='h-5 w-5'/>
+        </button>
       </div>
     </footer>
   );

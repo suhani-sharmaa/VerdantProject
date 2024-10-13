@@ -9,11 +9,7 @@ const Navbar = () => {
     setIsScrolled(!isScrolled);
     setIsOpen(!isOpen);
   };
-  // let Links = document.querySelectorAll('Link');
-  // Links.forEach((ele)=>{
-  //   ele.addEventListener('click',()=>{
-  //   });
-  // })
+
   // Change navbar background on scroll
   useEffect(() => {
     const handleScroll = () => {
@@ -33,13 +29,13 @@ const Navbar = () => {
   });
 
   return (
-    <nav className={`font-Ankori fixed top-0 left-0 w-full z-50 transition-colors duration-200 ${isScrolled ? 'bg-[#057E47]' : 'bg-transparent'}`}>
+    <nav className={`font-Ankori fixed top-0 left-0 w-full z-50 transition-colors ${isScrolled ? 'bg-[#078d50]' : 'bg-transparent'}  duration-200`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           {/* Logo with white box */}
-          <div className="flex-shrink-0 cursor-pointer">
+          <div className="cursor-pointer px-1">
             <img
-              className="h-12"
+              className="h-16 hover:scale-110 duration-200 hover:brightness-125"
               src={verLogo}
               alt="Logo"
             />
@@ -47,13 +43,14 @@ const Navbar = () => {
 
           {/* Menu for larger screens */}
           <div className="hidden md:block">
-            <div className={`ml-10 flex items-baseline space-x-4 ${isScrolled ? 'text-white' : 'text-gray-500'}`}>
-            <Link to='/' className=" hover:scale-110 transition-transform duration-200 hover:text-white px-3 py-2 text-sm font-medium">HOME</Link>
-              <Link to='/products' className=" hover:scale-110 transition-transform duration-200 hover:text-white px-3 py-2 text-sm font-medium">PRODUCTS</Link>
-              <Link to='/customization' className=" hover:scale-110 transition-transform duration-200 hover:text-white px-3 py-2 text-sm font-medium">CUSTOMIZATION</Link>
-              <Link to='/news' className=" hover:scale-110 transition-transform duration-200 hover:text-white px-3 py-2 text-sm font-medium">NEWS</Link>
-              <Link to='/Aboutus' className=" hover:scale-110 transition-transform duration-200 hover:text-white px-3 py-2 text-sm font-medium">ABOUT US</Link>
-              <Link to='/contactus' className=" hover:scale-110 transition-transform duration-200 hover:text-white px-3 py-2 text-sm font-medium">CONTACT US</Link>
+            <div className={`ml-10 flex items-baseline space-x-4
+              text-${isScrolled?'white':'slate-00'} text-md font-Ankori text-white`}>
+              <Link to='/' className=" hover:scale-110 transition-transform duration-200 px-3 py-2">HOME</Link>
+              <Link to='/products' className=" hover:scale-110 transition-transform duration-200 px-3 py-2">PRODUCTS</Link>
+              <Link to='/customization' className=" hover:scale-110 transition-transform duration-200 px-3 py-2">CUSTOMIZATION</Link>
+              <Link to='/news' className=" hover:scale-110 transition-transform duration-200 px-3 py-2">NEWS</Link>
+              <Link to='/Aboutus' className=" hover:scale-110 transition-transform duration-200 px-3 py-2">ABOUT US</Link>
+              <Link to='/contactus' className=" hover:scale-110 transition-transform duration-200 px-3 py-2">CONTACT US</Link>
             </div>
           </div>
 
@@ -61,7 +58,7 @@ const Navbar = () => {
           <div className="md:hidden flex items-center">
             <button
               onClick={toggleMenu}
-              className="text-white hover:text-white focus:outline-none"
+              className="text-white focus:outline-none"
               aria-label="Toggle menu"
             >
               {isOpen ? <FaTimes className="h-6 w-6" /> : <FaBars className="h-6 w-6" />}
@@ -73,12 +70,12 @@ const Navbar = () => {
         {isOpen && (
           <div className="md:hidden">
             <div className="flex flex-col items-center space-y-4 mt-4">
-            <Link to='/' className="text-white hover:text-white px-3 py-2 text-sm font-medium">HOME</Link>
-              <Link className="text-white hover:text-white px-3 py-2 text-sm font-medium">PRODUCTS</Link>
-              <Link className="text-white hover:text-white px-3 py-2 text-sm font-medium">CUSTOMIZATION</Link>
-              <Link className="text-white hover:text-white px-3 py-2 text-sm font-medium">NEWS</Link>
-              <Link className="text-white hover:text-white px-3 py-2 text-sm font-medium">ABOUT US</Link>
-              <Link className="text-white hover:text-white px-3 py-2 text-sm font-medium">CONTACT US</Link>
+            <Link to='/' className="text-white px-3 py-2">HOME</Link>
+              <Link to='/products' className="text-white px-3 py-2">PRODUCTS</Link>
+              <Link to='/customization' className="text-white px-3 py-2">CUSTOMIZATION</Link>
+              <Link to='/news' className="text-white px-3 py-2">NEWS</Link>
+              <Link to='/Aboutus' className="text-white px-3 py-2">ABOUT US</Link>
+              <Link to='/contactus' className="text-white px-3 py-2">CONTACT US</Link>
             </div>
           </div>
         )}
