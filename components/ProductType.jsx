@@ -6,6 +6,7 @@ import Bus from '../Images/ProductsImages/type4.jpg'
 import Truck from '../Images/ProductsImages/type5.jpg'
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { data } from "autoprefixer";
 const ImgData = {
   tractors:  Tractor ,
   ambulances: Ambulance ,
@@ -19,10 +20,14 @@ export default function ProductType() {
   const { type } = useParams();
   const imgUrl = ImgData[type];
   const getModels = async()=>{
-    let data = await fetch(`${url}/${type.charAt(0).toUpperCase() + type.slice(1)}`);
-    data  = await data.json();
-    setModels(data);
-  }
+ try{     let data = await fetch(`${url}/${type.charAt(0).toUpperCase() + type.slice(1)}`);
+      data  = await data.json();
+      setModels(data);
+    }catch(err) {
+      console.log(err);
+      alert("Some Error Accured");
+    }
+    }
   useEffect(()=>{
     window.scrollTo(0, 0);
     if(models.length == 0) {

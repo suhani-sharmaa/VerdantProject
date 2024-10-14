@@ -17,9 +17,14 @@ export default function Product({initial = 0}) {
     Cars:type3,
   };
 const getCategories = async()=>{
+ try {
   const data = await fetch(url);
   const res = await data.json();
   setDataTypes(res);
+}catch(err){
+  console.log(err);
+  alert("Some Error Accured");
+}
 }
   const[count,setCount] = useState(initial);
   useEffect(()=>{
