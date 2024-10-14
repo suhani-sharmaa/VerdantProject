@@ -6,19 +6,21 @@ import type3 from '../Images/ProductsImages/type3.jpg';
 import type4 from '../Images/ProductsImages/type4.jpg';
 import type5 from '../Images/ProductsImages/type5.jpg';
 import { useEffect, useState } from 'react';
-const discriptionData =[
-  {evCars:'Discover the future of driving with our electric cars. Offering zero emissions, lower running costs, and cutting-edge technology, these EVs provide an eco-friendly yet powerful driving experience. Perfect for those looking to reduce their carbon footprint without compromising on performance.'},
-
-  {evTractors:'Revolutionize your farming with our electric tractors. Designed for efficiency and sustainability, these EV tractors offer robust performance with lower maintenance and fuel costs, all while reducing emissions. Ideal for modern, eco-conscious agriculture.'},
-
-  {evBuses:'Upgrade your fleet with our electric buses. Offering zero emissions, quiet operation, and lower running costs, these EV buses are perfect for cities and businesses looking to promote sustainable and cost-efficient public transportation solutions.'},
-
-  {evTrucks:'Power up your logistics with our electric trucks. Engineered for long-haul performance and sustainability, these EV trucks provide lower fuel costs, reduced emissions, and superior efficiency, making them the ideal solution for modern transportation needs.'},
-
-  {evAmbulance:'Experience the next generation of emergency response with our electric ambulances. These eco-friendly, zero-emission vehicles provide rapid, reliable transport while reducing operational costs and environmental impact. Built with advanced medical technology, our EV ambulances deliver sustainability and performance when it matters most.'},
-  
-]
+const url = "http://localhost:4321/api/category";
 export default function Product({initial = 0}) {
+  const[dataTypes , setDataTypes] = useState([]);
+  const imgUrl = {
+    Trucks:type5,
+    Tractors:type1,
+    Ambulance:type2,
+    Buses:type4,
+    Cars:type3,
+  };
+const getCategories = async()=>{
+  const data = await fetch(url);
+  const res = await data.json();
+  setDataTypes(res);
+}
   const[count,setCount] = useState(initial);
   useEffect(()=>{
     window.scrollTo(0, 0);
@@ -26,8 +28,10 @@ export default function Product({initial = 0}) {
     if(count<=60) {
       setTimeout(() => {
         setCount(count + 1);
-      }, 10);  
+      }, 10);
+      return; 
     }
+    getCategories();
   },[count])
   return (
     <>
@@ -54,14 +58,13 @@ export default function Product({initial = 0}) {
           <p className="animate-pulse md:text-3xl text-xl">Major industrial sectors</p>
         </div>
       </div>
-
       <div className="Product-Types h-fit flex flex-wrap justify-center">
-        <TemplateProduct key={5} bgImage={type5} Type={'Trucks'} link='trucks' discription={discriptionData[3].evTrucks}/>
-        <TemplateProduct key={1} bgImage={type1} Type={'Tractor'} link='tractors' discription={discriptionData[1].evTractors}/>
-        <TemplateProduct key={2} bgImage={type2} Type={'Ambulance'} link='ambulances' discription={discriptionData[4].evAmbulance}/>
-        <TemplateProduct key={4} bgImage={type4} Type={'Buses'} link='buses' discription={discriptionData[2].evBuses}/>
-        <TemplateProduct key={3} bgImage={type3} Type={'Cars'} link='cars' discription={discriptionData[0].evCars}/>
-      </div>
+        {dataTypes.map((cat,index)=>{
+          return(
+            <TemplateProduct key={index} bgImage={imgUrl[cat.name]}Type={cat.name} link= {cat.name.toLowerCase()} discription={cat.description}/>
+          )
+        })}
+      </div> 
     </>
   );
 }
