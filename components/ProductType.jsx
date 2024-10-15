@@ -6,7 +6,7 @@ import Bus from '../Images/ProductsImages/type4.jpg'
 import Truck from '../Images/ProductsImages/type5.jpg'
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { data } from "autoprefixer";
+import Loader from './Loader';
 const ImgData = {
   tractors:  Tractor ,
   ambulances: Ambulance ,
@@ -14,18 +14,22 @@ const ImgData = {
   buses: Bus,
   trucks: Truck
 };
-const url = "http://localhost:4321/api/category";
+const url = import.meta.env.VITE_BACKEND_URL;
 export default function ProductType() {
   const[models , setModels] = useState([]);
+  const[loading ,setLoading] = useState(true);
   const { type } = useParams();
   const imgUrl = ImgData[type];
   const getModels = async()=>{
- try{     let data = await fetch(`${url}/${type.charAt(0).toUpperCase() + type.slice(1)}`);
+ try{
+  let data = await fetch(`${url}/api/category/${type.charAt(0).toUpperCase() + type.slice(1)}`);
       data  = await data.json();
       setModels(data);
     }catch(err) {
       console.log(err);
       alert("Some Error Accured");
+    }finally{
+      setLoading(false);
     }
     }
   useEffect(()=>{
@@ -45,6 +49,8 @@ export default function ProductType() {
           </span>
         </div>
         <div className="Product-Types flex flex-wrap justify-center">
+        {loading && <Loader/>}
+        {!loading && models.length == 0 && <p className='w-full text-center text-3xl'>No Products Available</p>}
         {models.map((Model , index)=>{
           return(
             <TemplateProduct

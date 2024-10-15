@@ -6,9 +6,11 @@ import type3 from '../Images/ProductsImages/type3.jpg';
 import type4 from '../Images/ProductsImages/type4.jpg';
 import type5 from '../Images/ProductsImages/type5.jpg';
 import { useEffect, useState } from 'react';
-const url = "http://localhost:4321/api/category";
+import Loader from './Loader';
+const url = import.meta.env.VITE_BACKEND_URL;
 export default function Product({initial = 0}) {
   const[dataTypes , setDataTypes] = useState([]);
+  const[loading ,setLoading] = useState(true);
   const imgUrl = {
     Trucks:type5,
     Tractors:type1,
@@ -18,12 +20,14 @@ export default function Product({initial = 0}) {
   };
 const getCategories = async()=>{
  try {
-  const data = await fetch(url);
+  const data = await fetch(`${url}/api/category`);
   const res = await data.json();
   setDataTypes(res);
 }catch(err){
   console.log(err);
   alert("Some Error Accured");
+}finally{
+  setLoading(false);
 }
 }
   const[count,setCount] = useState(initial);
@@ -64,6 +68,8 @@ const getCategories = async()=>{
         </div>
       </div>
       <div className="Product-Types h-fit flex flex-wrap justify-center">
+      {loading && <Loader/>}
+      {!loading && dataTypes.length == 0 && <p className='w-full text-center text-3xl'>No Products Available</p>}
         {dataTypes.map((cat,index)=>{
           return(
             <TemplateProduct key={index} bgImage={imgUrl[cat.name]}Type={cat.name} link= {cat.name.toLowerCase()} discription={cat.description}/>
