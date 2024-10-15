@@ -16,6 +16,7 @@ import Customization from './components/Customization';
 import ProductDetails from './components/ProductDetails';
 import Footer from './components/Footer';
 import Admin from './components/Admin';
+import LoginAdmin from './components/LoginAdmin';
 const App = () => {
   return (
     <>
@@ -24,6 +25,7 @@ const App = () => {
     <Routes>
         <Route path="/" Component={Home}/>
         <Route path="/admin" Component={Admin}/>
+        <Route path="/adminLogin" Component={LoginAdmin}/>
         <Route path="/Aboutus" Component={Aboutus}/>
         <Route path="/products" Component={Product}/>
         <Route path="/news" Component={News}/>

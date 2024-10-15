@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import AutomotiveSection from "./AutomotiveSection";
+// import AutomotiveSection from "./AutomotiveSection";
 import CompanyNews from "./CompanyNews";
 import Exhibitions from "./Exhibitions";
 import IndustrialSector from "./IndustrialSectorComponent";
@@ -15,7 +15,7 @@ export default function Home() {
           <VideoSlider/>
           <Exhibitions/>
           <IndustrialSector/>
-          <AutomotiveSection/>
+          {/* <AutomotiveSection/> */}
           <CompanyNews/>
         </div>
   )

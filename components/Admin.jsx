@@ -49,10 +49,11 @@ const Admin = () => {
  
   //function to get the admin data from db
   const getAdmin =async()=>{
+    const authToken = localStorage.getItem('authToken');
     const responce  = await axios.get(`${url}/auth/admin`,{
       headers:{
         "Content-Type":"application/json",
-        "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYW50cmlrc2giLCJlbWFpbCI6ImFudHJpa3NoMkBnbWFpbC5jb20iLCJwYXNzd29yZCI6ImFudHJpa3NocmF3YXQyMSIsImlhdCI6MTcyODkxMzE2OX0.sSTP0WzobH_YkC_Qdv33f1IMCrxuSnMy8BGLZlfqLV0"
+        "token":`${authToken}`
       }
     });
     const details = responce.data;
@@ -98,7 +99,7 @@ const Admin = () => {
   useEffect(() => {
     getAdmin();
     fetchCategories();
-  }, []);
+  });
 
   return  (
     <div className="min-h-screen bg-gradient-to-r from-green-400 to-green-600 flex flex-col justify-center items-center p-8">
