@@ -10,7 +10,7 @@ export default function TemplateProduct({ bgImage, Type ,discription, link}) {
       threshold: 0.2, // Ensures smoother triggering
     });
     const slideInFromBottom = {
-      hidden: { opacity: 0, y: 100 }, // Start from below the viewport
+      hidden: { opacity: 0, y:100 }, // Start from below the viewport
       visible: { opacity: 1, y: 0 },  // Animate to its natural position
     };
   return (
@@ -37,7 +37,7 @@ export default function TemplateProduct({ bgImage, Type ,discription, link}) {
           </h1>
           <hr className="md:w-1/12 w-1/5 my-7 bg-green-600 h-1 border-none" />
         </div>
-        <div className="text-white md:text-xl text-sm font-bold">
+        <div className="text-white md:text-xl text-sm font-bold w-full">
           <p>{discription}</p>
         </div>
         <Link

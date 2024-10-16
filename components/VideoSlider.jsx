@@ -44,7 +44,7 @@ const VideoSlider = () => {
         <h2 className="text-white text-2xl md:text-4xl mt-4">
           Sustainable Future
         </h2>
-        <Link className="mt-3 px-7 flex items-center py-3 bg-gradient-to-br from-green-600 via-emerald-500 to-green-900 text-white rounded-3xl hover:from-green-400 duration-200">
+        <Link to={'/products'} className="mt-3 px-7 flex items-center py-3 bg-gradient-to-br from-green-600 via-emerald-500 to-green-900 text-white rounded-3xl hover:from-green-400 duration-200">
           Our Portfolio <FaArrowRight className="ml-1"/>
         </Link>
       </div>

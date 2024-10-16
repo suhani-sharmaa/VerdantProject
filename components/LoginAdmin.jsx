@@ -1,13 +1,14 @@
 import axios from "axios";
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
+import { LuLoader2 } from "react-icons/lu";
 
 export default function LoginAdmin() {
  const [loginData, setLoginData] = useState({
     email: '',
     password: ''
   });
-  const [loading ,setLoading] = useState('Login');
+  const [loading ,setLoading] = useState(false);
   const navigate = useNavigate();
   const url = import.meta.env.VITE_BACKEND_URL;
   const onChange = (e) => {
@@ -17,7 +18,7 @@ export default function LoginAdmin() {
   const handleLogin = async(e) => {
     e.preventDefault();
   try{ 
-          setLoading('Loading...');
+          setLoading(true);
            const responce = await axios.post(`${url}/auth/login`,{
                     "email":loginData.email,
                     "password":loginData.password
@@ -31,10 +32,10 @@ export default function LoginAdmin() {
           alert('Incorrect Cordentials!')
     }
   }catch(err){
-          alert("Incorrect Cordentials!")
+          alert(err.message)
           console.log(err);
   }finally{
-          setLoading('Login');
+          setLoading(false);
   }
 }
   return (
@@ -75,9 +76,9 @@ export default function LoginAdmin() {
       </div>
       <button
         type="submit"
-        className="px-6 py-2 bg-violet-500 rounded hover:bg-white hover:text-violet-700 font-semibold transition-all text-white"
+        className={`px-6 py-2 flex items-center bg-violet-500 rounded hover:bg-white hover:text-violet-700 ${loading && 'brightness-50'} font-semibold transition-all text-white`}
       >
-        {loading}
+        Login{loading?<LuLoader2 className="animate-spin mx-2"/>:''}
       </button>
     </form>
   </div>

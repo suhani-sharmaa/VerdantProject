@@ -32,7 +32,6 @@ const getCategories = async()=>{
 }
   const[count,setCount] = useState(initial);
   useEffect(()=>{
-    window.scrollTo(0, 0);
     document.title = 'Products-Verdant'
     if(count<=60) {
       setTimeout(() => {
@@ -69,10 +68,14 @@ const getCategories = async()=>{
       </div>
       <div className="Product-Types h-fit flex flex-wrap justify-center">
       {loading && <Loader/>}
-      {!loading && dataTypes.length == 0 && <p className='w-full text-center text-3xl'>No Products Available</p>}
+      {!loading && dataTypes.length == 0 && <p className='w-full text-center text-3xl m-2'>No Products Available</p>}
         {dataTypes.map((cat,index)=>{
           return(
-            <TemplateProduct key={index} bgImage={imgUrl[cat.name]}Type={cat.name} link= {cat.name.toLowerCase()} discription={cat.description}/>
+            <TemplateProduct key={index}
+             bgImage={imgUrl[cat.name]?imgUrl[cat.name]:cat.image}
+             Type={cat.name} 
+             link= {cat.name.toLowerCase()} 
+             discription={cat.description}/>
           )
         })}
       </div> 

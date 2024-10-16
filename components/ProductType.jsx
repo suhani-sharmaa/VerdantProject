@@ -9,7 +9,7 @@ import { useParams } from "react-router-dom";
 import Loader from './Loader';
 const ImgData = {
   tractors:  Tractor ,
-  ambulances: Ambulance ,
+  ambulance: Ambulance ,
   cars: Car,
   buses: Bus,
   trucks: Truck
@@ -24,6 +24,7 @@ export default function ProductType() {
  try{
   let data = await fetch(`${url}/api/category/${type.charAt(0).toUpperCase() + type.slice(1)}`);
       data  = await data.json();
+      console.log(data);
       setModels(data);
     }catch(err) {
       console.log(err);
@@ -57,6 +58,7 @@ export default function ProductType() {
             key={index}
             bgImage={imgUrl}
             Type={Model.name}
+            discription={Model.description}
             link={`${type}/${Model.name}`}
           />
           )
