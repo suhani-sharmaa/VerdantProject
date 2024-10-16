@@ -1,40 +1,54 @@
-import { useState } from 'react';
+import { useState, Suspense } from 'react';
 import { FaArrowRight } from "react-icons/fa";
-import video1 from "../Videos/HOME - CCIG.mp4";
-import video2 from "../Videos/video.mp4";
-import video3 from "../Videos/tractors.mp4";
-import video4 from "../Videos/video4.mp4"
 import { Link } from 'react-router-dom';
 
+// Lazy load videos
 const videoSlides = [
-  { src: video1, alt: 'Slide 1' },
-  { src: video2, alt: 'Slide 2' },
-  { src: video3, alt: 'Slide 3' },
-  { src: video4, alt: 'Slide 4' }
+  { src: () => import("../Videos/HOME - CCIG.mp4"), alt: 'Slide 1' },
+  { src: () => import("../Videos/video.mp4"), alt: 'Slide 2' },
+  { src: () => import("../Videos/tractors.mp4"), alt: 'Slide 3' },
+  { src: () => import("../Videos/video4.mp4"), alt: 'Slide 4' }
 ];
 
 const VideoSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentVideo, setCurrentVideo] = useState(null);
+
+  const loadVideo = async (slideIndex) => {
+    const videoModule = await videoSlides[slideIndex].src();
+    setCurrentVideo(videoModule.default);
+  };
 
   const nextSlide = () => {
-    setCurrentSlide((currentSlide + 1) % videoSlides.length);
+    const nextSlideIndex = (currentSlide + 1) % videoSlides.length;
+    setCurrentSlide(nextSlideIndex);
+    loadVideo(nextSlideIndex);
   };
 
   const handleVideoEnd = () => {
     nextSlide();  // Automatically move to the next video when the current one ends
   };
 
+  // Load the initial video when the component mounts
+  useState(() => {
+    loadVideo(0);
+  }, []);
+
   return (
     <div className="relative h-screen overflow-hidden">
-      {/* Video Background */}
-      <video
-        key={currentSlide}
-        className="absolute inset-0 w-full h-full object-cover"
-        src={videoSlides[currentSlide].src}
-        autoPlay
-        muted
-        onEnded={handleVideoEnd}  // Move to the next video when the current video ends
-      />
+      {/* Suspense for Video */}
+      <Suspense fallback={<div>Loading Video...</div>}>
+        {currentVideo && (
+          <video
+            key={currentSlide}
+            className="absolute inset-0 w-full h-full object-cover"
+            src={currentVideo}
+            autoPlay
+            muted
+            onEnded={handleVideoEnd}  // Move to the next video when the current video ends
+          />
+        )}
+      </Suspense>
 
       {/* Slide Content */}
       <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4 z-10">
@@ -45,7 +59,7 @@ const VideoSlider = () => {
           Sustainable Future
         </h2>
         <Link to={'/products'} className="mt-3 px-7 flex items-center py-3 bg-gradient-to-br from-green-600 via-emerald-500 to-green-900 text-white rounded-3xl hover:from-green-400 duration-200">
-          Our Portfolio <FaArrowRight className="ml-1"/>
+          Our Portfolio <FaArrowRight className="ml-1" />
         </Link>
       </div>
 
@@ -71,6 +85,6 @@ const VideoSlider = () => {
       <div className="absolute inset-0 bg-black opacity-50"></div>
     </div>
   );
-}; 
+};
 
 export default VideoSlider;

@@ -145,14 +145,15 @@ const addSubcategory = async () => {
    setExpandedCategoryIndex(index); // Show subcategories
   }
  };
- window.addEventListener('close', () => {
-  localStorage.removeItem('authToken');
- })
 
  // Fetch categories when the component mounts
  useEffect(() => {
+  window.addEventListener('unload', () => {
+    localStorage.removeItem('authToken');
+   })
   if(!authToken || authToken === '') {
    navigate('/adminLogin');
+   return;
   }
   getAdmin();
   if(categories.length === 0) {
