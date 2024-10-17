@@ -1,25 +1,16 @@
-import tractor from '../Images/ProductsImages/type1.jpg'
-import ambulance from '../Images/ProductsImages/type2.jpg'
-import car from '../Images/ProductsImages/type3.jpg'
-import bus from '../Images/ProductsImages/type4.jpg'
-import truck from '../Images/ProductsImages/type5.jpg'
 import Contactusform from './Contactusform'
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import noProduct from '../Images/ProductsImages/noProduct.png'
+import { LuLoader2 } from "react-icons/lu";
+
 import axios from 'axios'
 const url = import.meta.env.VITE_BACKEND_URL;
-const imgData ={
-  tractors:tractor,
-  ambulances:ambulance,
-  cars:car,
-  buses:bus,
-  trucks:truck,
-}
 const ProductDetails = () => {
-  const { model,type } = useParams();
+  const { mId } = useParams();
   const [product,setProduct] = useState({
     name: '',
-    image:imgData[type],
+    image:'',
     price: '$299.99',
     rating: 4.5,
     description:'',
@@ -30,14 +21,24 @@ const ProductDetails = () => {
       'Affordable price',
     ],
   });
+  const checkImageUrl = (url) => {
+    return new Promise((resolve) => {
+      const img = new Image();
+      
+      img.onload = () => resolve(true); // Image loaded successfully
+      img.onerror = () => resolve(false); // Image failed to load
+      
+      img.src = url; // Set the source of the image
+    });
+  };
   const getProduct=async()=>{
  try{
-   const responce = await axios.get(`${url}/api/subCategory/${model}`);
-    const data = await responce.data;
-    setProduct({
+   const { data } = await axios.get(`${url}/api/subCategory/${mId}`);
+     setProduct({
       ...product,
       name:data.name,
       description:data.description,
+      image:await checkImageUrl(data.image)?data.image:noProduct
     })
   }catch(err) {
     console.log(err);
@@ -50,13 +51,14 @@ useEffect(()=>{
      getProduct();
   }
 })
+const {name , image , description , price} = product;
   return (
     <>
-        <div className='h-lvh flex flex-wrap items-end bg-cover font-Ankori' style={{ backgroundImage: `url(${product.image})`}}>
-      <span className='w-full'>
+        <div className='h-lvh flex flex-wrap items-end bg-cover font-Ankori' style={{ backgroundImage: `url(${image})`}}>
+        <span className='w-full'>
       <h1 className="font-Ankori tracking-widest text-white 
-                text-4xl md:text-9xl m-10 mb-0"
-              >{model.toUpperCase()}</h1>
+                text-4xl md:text-7xl m-10 mb-0"
+              >{`${name}`.toUpperCase()}</h1>
         <hr className="w-1/12 m-14 mt-4 bg-green-600 h-1.5 border-none"/>
           </span>
         </div>
@@ -64,12 +66,12 @@ useEffect(()=>{
       <div className="p-8">
         {/* Product Name and Price */}
         <div className="flex justify-between items-center mb-4">
-          <h1 className="text-4xl font-bold text-gray-800">{product.name?product.name:'loading...'}</h1>
-          <span className="text-3xl font-semibold text-green-600">{product.price}</span>
+          <h1 className="text-4xl font-bold text-gray-800">{!name?<LuLoader2 className='animate-spin'/>:`${name}`.charAt(0).toUpperCase()+`${name}`.slice(1)}</h1>
+          <span className="text-3xl font-semibold text-green-600">{price}</span>
         </div>
 
         {/* Product Description */}
-        <p className="text-lg text-gray-600 mb-6">{product.description?product.description:'loading...'}</p>
+        <p className="text-lg text-gray-600 mb-6">{`${description}`.charAt(0).toUpperCase()+`${description}`.slice(1)}</p>
 
         {/* Product Features */}
         <h2 className="text-2xl font-semibold mb-2 text-gray-700">Features:</h2>

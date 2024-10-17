@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-export default function TemplateProduct({ bgImage, Type ,discription, link}) {
+export default function TemplateProduct({link, bgImage, Type ,discription}) {
   // Set the background image style
     // Intersection Observer for the first section
     const [ref1, inView1] = useInView({
@@ -33,7 +33,7 @@ export default function TemplateProduct({ bgImage, Type ,discription, link}) {
           <h1 className="font-semibold tracking-wide text-white 
             text-5xl md:text-6xl md:mt-14" // Responsive text sizes
           >
-            {Type}
+            {`${Type}`.charAt(0).toUpperCase() + `${Type}`.slice(1)}
           </h1>
           <hr className="md:w-1/12 w-1/5 my-7 bg-green-600 h-1 border-none" />
         </div>

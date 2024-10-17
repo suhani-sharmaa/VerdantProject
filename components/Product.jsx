@@ -7,22 +7,22 @@ import type4 from '../Images/ProductsImages/type4.jpg';
 import type5 from '../Images/ProductsImages/type5.jpg';
 import { useEffect, useState } from 'react';
 import Loader from './Loader';
+import axios from 'axios';
 const url = import.meta.env.VITE_BACKEND_URL;
 export default function Product({initial = 0}) {
   const[dataTypes , setDataTypes] = useState([]);
   const[loading ,setLoading] = useState(true);
   const imgUrl = {
-    Trucks:type5,
-    Tractors:type1,
-    Ambulance:type2,
-    Buses:type4,
-    Cars:type3,
+    trucks:type5,
+    tractors:type1,
+    ambulance:type2,
+    buses:type4,
+    cars:type3,
   };
 const getCategories = async()=>{
  try {
-  const data = await fetch(`${url}/api/category`);
-  const res = await data.json();
-  setDataTypes(res);
+  const {data} = await axios.get(`${url}/api/category`);
+  setDataTypes(data);
 }catch(err){
   console.log(err);
   alert("Some Error Accured");
@@ -32,6 +32,7 @@ const getCategories = async()=>{
 }
   const[count,setCount] = useState(initial);
   useEffect(()=>{
+      window.scrollTo(0,0);
     document.title = 'Products-Verdant'
     if(count<=60) {
       setTimeout(() => {
@@ -73,8 +74,8 @@ const getCategories = async()=>{
           return(
             <TemplateProduct key={index}
              bgImage={imgUrl[cat.name]?imgUrl[cat.name]:cat.image}
-             Type={cat.name} 
-             link= {cat.name.toLowerCase()} 
+             Type={cat.name}
+             link={cat._id} 
              discription={cat.description}/>
           )
         })}

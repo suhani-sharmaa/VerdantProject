@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { Suspense } from 'react';
 import Navbar from './components/Navbar';
 import './App.css'; // Import your styles here
@@ -27,14 +26,16 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/admin" element={<Admin />} />
+            <Route path="/admin/products" element={<Admin/>} />
+            <Route path="/admin/news" element={<Admin/>} />
             <Route path="/adminLogin" element={<LoginAdmin />} />
             <Route path="/Aboutus" element={<Aboutus />} />
             <Route path="/products" element={<Product />} />
             <Route path="/news" element={<News />} />
             <Route path="/contactus" element={<Contactuspage />} />
             <Route path="/customization" element={<Customization />} />
-            <Route path="/products/:type" element={<ProductType />} />
-            <Route path="/products/:type/:model" element={<ProductDetails/>} />
+            <Route path="/products/:cId" element={<ProductType />} />
+            <Route path="/products/:cId/:mId" element={<ProductDetails/>} />
           </Routes>
         </Suspense>
         <Footer />

@@ -1,4 +1,4 @@
-import { useState, Suspense } from 'react';
+import { useState, Suspense, useEffect } from 'react';
 import { FaArrowRight } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
@@ -30,7 +30,7 @@ const VideoSlider = () => {
   };
 
   // Load the initial video when the component mounts
-  useState(() => {
+  useEffect(() => {
     loadVideo(0);
   }, []);
 

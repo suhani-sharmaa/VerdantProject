@@ -23,16 +23,16 @@ export default function LoginAdmin() {
                     "email":loginData.email,
                     "password":loginData.password
           
-    });
-    const token = responce.data.token;
-    if(token) {
-    localStorage.setItem('authToken',token);
-    navigate('/admin');
-    }else{
-          alert('Incorrect Cordentials!')
+    }, {
+      withCredentials: true // This is essential for cookies
+  });
+    alert(responce.data);
+    console.log(responce)
+    if(responce.status === 200) { 
+      navigate('/admin');
     }
   }catch(err){
-          alert(err.message)
+          alert(err.message);
           console.log(err);
   }finally{
           setLoading(false);
