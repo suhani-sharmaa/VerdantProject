@@ -57,10 +57,10 @@ const Admin = () => {
      </div>
     </div>
    </div>
-   <div className="bg-white shadow-lg rounded-lg p-8 w-full max-w-6xl">
-    <h2 className="text-3xl font-bold text-gray-700 mb-4 border-b-2 flex justify-center">
-      <Link to={'/admin/products'} className='border-2 border-b-0 p-2 mx-4'>Manage Products</Link>
-      <Link to={'/admin/news'} className='border-2 border-b-0 p-2 mx-4'>Manage News</Link>
+   <div className="bg-white shadow-lg rounded-lg p-8 w-full max-w-6xl min-h-dvh">
+    <h2 className="text-3xl font-bold text-gray-800 mb-4 border-b-2 flex justify-left">
+      <Link to={'/admin/products'} className={`rounded-xl bg-opacity-30 ${content === "products"?'bg-gray-400':''} p-2 mx-4 mb-1`}>Manage Products</Link>
+      <Link to={'/admin/news'} className={`rounded-xl bg-opacity-30 ${content === "news"?'bg-gray-400':''} p-2 mx-4 mb-1`}>Manage News</Link>
     </h2>
     {content === 'products'?<ManageProduct/>:"No News Available"}
    </div>

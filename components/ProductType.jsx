@@ -22,6 +22,7 @@ export default function ProductType() {
   const getModels = async () => {
     try {
       const { data } = await axios.get(`${url}/api/category/${cId}`);
+      setModels(data);
       const res =await checkImageUrl(data.image);
       if(!res) {
         setModels({
@@ -58,8 +59,12 @@ export default function ProductType() {
         </div>
         <div className="Product-Types flex flex-wrap justify-center">
         {loading && <Loader/>}
-        {!loading&&models.length  === 0 && <p className='w-full text-center text-3xl my-5'>{models.subcategories[0]?"yes":"no"}</p>}
-        {!loading &&subcategories.map((Model , index)=>{
+        {!loading && subcategories.length === 0 && (
+  <strong className="text-3xl font-semibold my-5">
+    No Products Available
+  </strong>
+)}
+        {!loading && subcategories.map((Model , index)=>{
           return(
             <TemplateProduct
             key={index}

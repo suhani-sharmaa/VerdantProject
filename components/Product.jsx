@@ -8,6 +8,7 @@ import type5 from '../Images/ProductsImages/type5.jpg';
 import { useEffect, useState } from 'react';
 import Loader from './Loader';
 import axios from 'axios';
+import Alert from './Alert';
 const url = import.meta.env.VITE_BACKEND_URL;
 export default function Product({initial = 0}) {
   const[dataTypes , setDataTypes] = useState([]);
@@ -44,6 +45,7 @@ const getCategories = async()=>{
   },[count])
   return (
     <>
+    <Alert/>
       <div className="flex flex-wrap items-center justify-center font-Ankori">
         <img src={start} className="w-svw md:h-lvh h-80 -z-10 brightness-50" />
         <div className="absolute md:h-1/2 h-1/5 w-1/5 mx-20 text-white text-center md:right-2/3 right-48">
@@ -69,7 +71,11 @@ const getCategories = async()=>{
       </div>
       <div className="Product-Types h-fit flex flex-wrap justify-center">
       {loading && <Loader/>}
-      {!loading && dataTypes.length == 0 && <p className='w-full text-center text-3xl m-2'>No Products Available</p>}
+      {!loading && dataTypes.length === 0 && (
+  <strong className="text-3xl font-semibold my-5">
+    No Products Available
+  </strong>
+)}
         {dataTypes.map((cat,index)=>{
           return(
             <TemplateProduct key={index}

@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import noProduct from '../Images/ProductsImages/noProduct.png'
+import { useEffect, useState } from "react";
 
 export default function TemplateProduct({link, bgImage, Type ,discription}) {
   // Set the background image style
@@ -9,10 +11,30 @@ export default function TemplateProduct({link, bgImage, Type ,discription}) {
       triggerOnce: true,
       threshold: 0.2, // Ensures smoother triggering
     });
+    const[image , setImage] = useState(bgImage);
     const slideInFromBottom = {
       hidden: { opacity: 0, y:100 }, // Start from below the viewport
       visible: { opacity: 1, y: 0 },  // Animate to its natural position
     };
+    const checkImageUrl = (url) => {
+      return new Promise((resolve) => {
+        const img = new Image();
+        
+        img.onload = () => resolve(true); // Image loaded successfully
+        img.onerror = () => resolve(false); // Image failed to load
+        
+        img.src = url; // Set the source of the image
+      });
+    };
+    const setimage =async()=>{
+      const res = await checkImageUrl(image);
+      if(!res) {
+        setImage(noProduct);
+      }
+    }
+    useEffect(()=>{
+      setimage();
+    })
   return (
     <>
       <motion.div
@@ -26,7 +48,7 @@ export default function TemplateProduct({link, bgImage, Type ,discription}) {
       <div
         className="md:h-104 h-96 md:m-10 bg-black rounded-3xl Template-Project
           w-full m-4 my-10 hover:shadow--3 shadow-lg font-Ankori"  // Responsive width and margin adjustments for small screens
-        style={{ backgroundImage: `url(${bgImage})` }} // Apply the background style here
+        style={{ backgroundImage: `url(${image})` }} // Apply the background style here
       >
         <div className="w-full h-full flex flex-wrap items-center p-6 backdrop-brightness-50 rounded-3xl">
         <div className="w-full">

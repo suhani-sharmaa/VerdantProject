@@ -11,7 +11,7 @@ const ProductDetails = () => {
   const [product,setProduct] = useState({
     name: '',
     image:'',
-    price: '$299.99',
+    price: '299999₹',
     rating: 4.5,
     description:'',
     features: [
