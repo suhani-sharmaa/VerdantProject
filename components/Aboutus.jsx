@@ -18,7 +18,7 @@ export default function Aboutus() {
         <img src={Evbg} className='absolute top-0 w-full h-full object-cover brightness-50 bg-center' alt="Background" />
         <div className='w-full md:w-11/12 my-20 md:my-40 h-fit z-10 px-4'>
           <div className='p-5 bottom-0 font-bold'>
-            <h1 className='text-sm md:text-lg text-white mx-3'>Founded in 2024</h1>
+            <h1 className='text-sm md:text-lg text-white mx-3'>Founded in 2022</h1>
             <h1 className='text-3xl md:text-6xl text-white inline m-3'>About</h1>
             <h1 className='text-3xl md:text-6xl text-green-600 inline m-3'>Verdant</h1>
           </div>
