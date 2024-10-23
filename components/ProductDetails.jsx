@@ -54,10 +54,10 @@ useEffect(()=>{
 const {name , image , description , price} = product;
   return (
     <>
-        <div className='h-lvh flex flex-wrap items-end bg-cover font-Ankori' style={{ backgroundImage: `url(${image})`}}>
+        <div className='h-lvh flex flex-wrap items-end bg-cover font-Ankori bg-center' style={{ backgroundImage: `url(${image})`}}>
         <span className='w-full'>
       <h1 className="font-Ankori tracking-widest text-white 
-                text-4xl md:text-7xl m-10 mb-0"
+                text-4xl md:text-7xl m-10 mb-0 bg-blend-difference bg-emerald-600 w-fit bg-opacity-45 px-2 rounded-md"
               >{`${name}`.toUpperCase()}</h1>
         <hr className="w-1/12 m-14 mt-4 bg-green-600 h-1.5 border-none"/>
           </span>

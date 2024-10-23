@@ -1,32 +1,30 @@
 import start from '../Images/ProductsImages/Bg1.webp';
 import TemplateProduct from './TemplateProduct';
-import type1 from '../Images/ProductsImages/type1.jpg';
-import type2 from '../Images/ProductsImages/type2.jpg';
-import type3 from '../Images/ProductsImages/type3.jpg';
-import type4 from '../Images/ProductsImages/type4.jpg';
-import type5 from '../Images/ProductsImages/type5.jpg';
 import { useEffect, useState } from 'react';
 import Loader from './Loader';
 import axios from 'axios';
-import Alert from './Alert';
+// import Alert from './Alert';
 const url = import.meta.env.VITE_BACKEND_URL;
 export default function Product({initial = 0}) {
+  // const[alert,setAlert] = useState({
+  //   type:'',
+  //   message:'',
+  //   display:'none'
+  // });
   const[dataTypes , setDataTypes] = useState([]);
   const[loading ,setLoading] = useState(true);
-  const imgUrl = {
-    trucks:type5,
-    tractors:type1,
-    ambulance:type2,
-    buses:type4,
-    cars:type3,
-  };
 const getCategories = async()=>{
  try {
   const {data} = await axios.get(`${url}/api/category`);
   setDataTypes(data);
 }catch(err){
   console.log(err);
-  alert("Some Error Accured");
+  alert(err.message);
+    // setAlert({
+    //   type:"Error",
+    //   message:err.message,
+    //   display:'flex',
+    // })
 }finally{
   setLoading(false);
 }
@@ -45,7 +43,6 @@ const getCategories = async()=>{
   },[count])
   return (
     <>
-    <Alert/>
       <div className="flex flex-wrap items-center justify-center font-Ankori">
         <img src={start} className="w-svw md:h-lvh h-80 -z-10 brightness-50" />
         <div className="absolute md:h-1/2 h-1/5 w-1/5 mx-20 text-white text-center md:right-2/3 right-48">
@@ -79,7 +76,7 @@ const getCategories = async()=>{
         {dataTypes.map((cat,index)=>{
           return(
             <TemplateProduct key={index}
-             bgImage={imgUrl[cat.name]?imgUrl[cat.name]:cat.image}
+             bgImage={cat.image}
              Type={cat.name}
              link={cat._id} 
              discription={cat.description}/>

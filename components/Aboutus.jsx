@@ -1,6 +1,6 @@
-import '../App.css'
 import Evbg from '../Images/AboutUsImages/Evbg.jpg'
 import Base from '../Images/AboutUsImages/Base.jpg'
+import  '../App.css'
 import Product from '../Images/AboutUsImages/Product.jpg'
 import Product2 from '../Images/AboutUsImages/Product2.jpg'
 import Product3 from '../Images/AboutUsImages/Product3.jpg'

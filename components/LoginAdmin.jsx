@@ -2,12 +2,18 @@ import axios from "axios";
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
 import { LuLoader2 } from "react-icons/lu";
+// import Alert from "./Alert";
 
 export default function LoginAdmin() {
  const [loginData, setLoginData] = useState({
     email: '',
     password: ''
   });
+  // const[alert,setAlert] = useState({
+  //   type:'',
+  //   message:'',
+  //   display:''
+  // });
   const [loading ,setLoading] = useState(false);
   const navigate = useNavigate();
   const url = import.meta.env.VITE_BACKEND_URL;
@@ -26,20 +32,29 @@ export default function LoginAdmin() {
     }, {
       withCredentials: true // This is essential for cookies
   });
-    alert(responce.data);
-    console.log(responce)
+    // setAlert({
+    //   type:"Success",
+    //   message:responce.data,
+    //   display:'flex',
+    // })
     if(responce.status === 200) { 
       navigate('/admin');
     }
   }catch(err){
-          alert(err.message);
           console.log(err);
+          alert('Unautherised Admin');
   }finally{
           setLoading(false);
+          // setAlert({
+          //   type:"",
+          //   message:"",
+          //   display:'',
+          // })
   }
 }
   return (
-/* From Uiverse.io by SmookyDev */ 
+    <>
+{/* <Alert type={alert.type} message={alert.message} view={alert.display}/> */}
 <div className="w-full h-lvh flex justify-center items-center font-Ankor bg-gradient-to-r from-green-400 to-green-600">
 <div className="h-fit w-fit flex items-center justify-center">
   <div className="h-full w-full rounded-xl">
@@ -84,6 +99,6 @@ export default function LoginAdmin() {
   </div>
 </div>
 </div>
-
+</>
   )
 }

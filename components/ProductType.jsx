@@ -49,10 +49,10 @@ export default function ProductType() {
   const{image , name ,subcategories} = models;
   return (
     <>
-    <div className='h-lvh flex flex-wrap items-end bg-cover font-Ankori' style={{ backgroundImage: `url(${image})`}}>
+    <div className='h-lvh flex flex-wrap items-end bg-cover font-Ankori bg-center' style={{ backgroundImage: `url(${image})`}}>
       <span className='w-full'>
       <h1 className="font-Ankori tracking-widest text-white 
-                text-4xl md:text-9xl m-10 mb-0"
+                text-4xl md:text-8xl m-10 mb-0 w-fit bg-emerald-600 rounded-2xl px-2 bg-opacity-50"
               >{`${name}`.toUpperCase()}</h1>
         <hr className="w-1/12 m-14 mt-4 bg-green-600 h-1.5 border-none"/>
           </span>

@@ -1,6 +1,5 @@
 import React, { Suspense } from 'react';
 import Navbar from './components/Navbar';
-import './App.css'; // Import your styles here
 import Aboutus from './components/Aboutus';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Product from './components/Product';
