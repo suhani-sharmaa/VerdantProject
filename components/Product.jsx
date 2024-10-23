@@ -49,7 +49,7 @@ const getCategories = async()=>{
           <h1 className="md:text-8xl text-4xl font-thin md:m-12 m-2">
             {count<=50?count:50}
           </h1>
-          <p className="animate-pulse md:text-3xl text-xl">Billion Yuan Assets</p>
+          <p className="animate-pulse md:text-3xl text-xl">11.3 Billion Indian Rupees (INR</p>
         </div>
         <div className="absolute w-px md:h-1/3 h-1/5 bg-white opacity-30 left-1/3"></div>
         <div className="absolute w-1/5 h-1/5 md:h-1/2 text-white text-center">
